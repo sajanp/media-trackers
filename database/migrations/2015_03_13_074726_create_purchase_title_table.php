@@ -18,7 +18,7 @@ class CreatePurchaseTitleTable extends Migration {
 			$table->integer('title_id')->unsigned();
 			$table->integer('purchase_id')->unsigned();
 			$table->integer('format_id')->unsigned();
-			$table->string('edition');
+			$table->string('edition')->nullable();
 			$table->timestamps();
 
 			$table->foreign('title_id')->references('id')->on('titles')->onUpdate('cascade');

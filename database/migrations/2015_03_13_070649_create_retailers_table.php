@@ -15,7 +15,7 @@ class CreateRetailersTable extends Migration {
 		Schema::create('retailers', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('name');
+			$table->string('name')->unique();
 			$table->boolean('isUltraviolet')->default(false);
 			$table->boolean('isDigital')->default(false);
 			$table->boolean('isRentable')->default(false);

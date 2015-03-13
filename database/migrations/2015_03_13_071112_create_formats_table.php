@@ -15,7 +15,7 @@ class CreateFormatsTable extends Migration {
 		Schema::create('formats', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('name');
+			$table->string('name')->unique();
 			$table->boolean('isOwnable')->default(false);
 			$table->boolean('isRentable')->default(false);
 			$table->boolean('isWatchable')->default(true);
