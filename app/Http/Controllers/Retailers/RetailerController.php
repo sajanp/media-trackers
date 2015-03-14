@@ -1,7 +1,9 @@
 <?php namespace App\Http\Controllers\Retailers;
 
 use App\Http\Controllers\Controller;
-use Request;
+use App\Entities\Retailer\RetailerInterface;
+use Illuminate\Contracts\Support\MessageBag;
+use Illuminate\Http\Request;
 
 class RetailerController extends Controller {
 
@@ -10,9 +12,11 @@ class RetailerController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(RetailerInterface $retailer)
 	{
-		return view('retailer.index');
+		$retailers = $retailer->all();
+
+		return view('retailer.index')->withRetailers($retailers);
 	}
 
 	public function create()
@@ -20,9 +24,24 @@ class RetailerController extends Controller {
 		return view('retailer.create');
 	}
 
-	public function store()
+	public function store(RetailerInterface $retailer, Request $request)
 	{
-		return Request::all();
+		try
+		{
+			$retailer->create([
+				'name' => $request->input('name'),
+				'isDigital' => $request->input('isDigital', false),
+				'isUltraviolet' => $request->input('isUltraviolet', false),
+				'isRentable' => $request->input('isRentable', false),
+				'isOwnable' => $request->input('isOwnable', false),
+			]);
+
+			return redirect()->route('retailer.index');
+		}
+		catch(Exception $e)
+		{
+			dd($e->getMessage());
+		}
 	}
 
 }
