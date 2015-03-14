@@ -17,6 +17,6 @@ class DbRetailerRepository implements RetailerInterface {
 
 	public function all(array $with = array())
 	{
-		return new Collection(json_decode(Retailer::all()->toJson()));
+		return new Collection(json_decode(Retailer::orderBy('name')->get()->toJson()));
 	}
 }
