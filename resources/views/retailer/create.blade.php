@@ -45,8 +45,9 @@
 				</div>
 			</div>
 		</div>
+		<hr>
 		<div class="form-group">
-			{!!Form::submit('Add New Retailer', ['class' => 'btn btn-success pull-right'])!!}
+			{!!Form::submit('Add New Retailer', ['class' => 'btn btn-success'])!!}
 		</div>
 	{!!Form::close()!!}
 @stop
