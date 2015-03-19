@@ -1,6 +1,7 @@
 <?php namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use View;
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -11,7 +12,9 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//
+		View::composer('retailer.partials.model-form', 'App\Http\ViewComposers\RetailerViewComposer@modelForm');
+		View::composer('retailer.show', 'App\Http\ViewComposers\RetailerViewComposer@show');
+		View::composer('retailer.index', 'App\Http\ViewComposers\RetailerViewComposer@index');
 	}
 
 	/**

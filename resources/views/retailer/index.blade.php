@@ -14,7 +14,7 @@
 		<tbody>
 			@foreach($retailers->all() as $retailer)
 				<tr>
-					<td>{{$retailer->name}}</td>
+					<td>{!! HTML::linkRoute('retailer.show', $retailer->name, $retailer->id) !!}</td>
 					<td class="{{($retailer->isOwnable ? 'success' : 'danger')}}"></td>
 					<td class="{{($retailer->isRentable ? 'success' : 'danger')}}"></td>
 					<td class="{{($retailer->isDigital ? 'success' : 'danger')}}"></td>

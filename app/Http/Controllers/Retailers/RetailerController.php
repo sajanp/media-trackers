@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Controller;
 use App\Entities\Retailer\RetailerInterface;
+use App\Entities\Retailer\EloquentRetailer as Retailer;
 use Illuminate\Contracts\Support\MessageBag;
 use Illuminate\Http\Request;
 
@@ -12,11 +13,9 @@ class RetailerController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index(RetailerInterface $retailer)
+	public function index()
 	{
-		$retailers = $retailer->all();
-
-		return view('retailer.index')->withRetailers($retailers);
+		return view('retailer.index');
 	}
 
 	public function create()
@@ -24,11 +23,11 @@ class RetailerController extends Controller {
 		return view('retailer.create');
 	}
 
-	public function store(RetailerInterface $retailer, Request $request)
+	public function store(RetailerInterface $retailers, Request $request)
 	{
 		try
 		{
-			$retailer->create([
+			$retailers->create([
 				'name' => $request->input('name'),
 				'isDigital' => $request->input('isDigital', false),
 				'isUltraviolet' => $request->input('isUltraviolet', false),
@@ -42,6 +41,16 @@ class RetailerController extends Controller {
 		{
 			dd($e->getMessage());
 		}
+	}
+
+	public function show($id)
+	{
+		return view('retailer.show');
+	}
+
+	public function edit($id)
+	{
+		return view('retailer.edit');
 	}
 
 }

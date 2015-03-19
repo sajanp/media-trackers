@@ -5,6 +5,11 @@ use Illuminate\Support\Collection;
 
 class DbRetailerRepository implements RetailerInterface {
 
+	public function fresh()
+	{
+		return new Retailer;
+	}
+
 	public function create(array $properties)
 	{
 		if (Retailer::create($properties))
@@ -15,8 +20,13 @@ class DbRetailerRepository implements RetailerInterface {
 		return false;
 	}
 
+	public function getById($id)
+	{
+		return Retailer::findOrFail($id);
+	}
+
 	public function all(array $with = array())
 	{
-		return new Collection(json_decode(Retailer::orderBy('name')->get()->toJson()));
+		return Retailer::orderBy('name')->get();
 	}
 }
