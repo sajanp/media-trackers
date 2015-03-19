@@ -15,7 +15,39 @@
 			<p>{!! HTML::linkRoute('retailer.edit', 'Edit ' . $retailer->name, $retailer->id, ['class' => 'btn btn-warning btn-xs btn-block']) !!}</p>
 		</div>
 		<div class="col-md-9">
-			
+			<table class="table table-condensed">
+				<thead>
+					<th class="text-center">Ownable</th>
+					<th class="text-center">Rentable</th>
+					<th class="text-center">Digital</th>
+					<th class="text-center">Ultraviolet</th>
+				</thead>
+				<tbody>
+					@if($retailer->isOwnable)
+						<td class="text-center success"><i class="fa fa-check"></i></td>
+					@else
+						<td class="text-center danger"><i class="fa fa-minus"></i></td>
+					@endif
+
+					@if($retailer->isRentable)
+						<td class="text-center success"><i class="fa fa-check"></i></td>
+					@else
+						<td class="text-center danger"><i class="fa fa-minus"></i></td>
+					@endif
+
+					@if($retailer->isDigital)
+						<td class="text-center success"><i class="fa fa-check"></i></td>
+					@else
+						<td class="text-center danger"><i class="fa fa-minus"></i></td>
+					@endif
+
+					@if($retailer->isUltraviolet)
+						<td class="text-center success"><i class="fa fa-check"></i></td>
+					@else
+						<td class="text-center danger"><i class="fa fa-minus"></i></td>
+					@endif
+				</tbody>
+			</table>			
 		</div>
 	</div>
 @stop
