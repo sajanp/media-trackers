@@ -15,8 +15,8 @@
 
       <div class="collapse navbar-collapse" id="sub-nav">
         <ul class="nav navbar-nav">
-        	<li class="{{navActive('retailer')}}">{!! HTML::linkRoute('retailer.index', 'View All') !!}</li>
-			<li class="{{navActive('retailer/create')}}">{!! HTML::linkRoute('retailer.create', 'Add New') !!}</li>
+        	<li class="{{URLActive('retailer')}}">{!! HTML::linkRoute('retailer.index', 'View All') !!}</li>
+			<li class="{{navActive('retailer.create')}}">{!! HTML::linkRoute('retailer.create', 'Add New') !!}</li>
         </ul>
       </div>
     </div>

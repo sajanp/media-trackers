@@ -32,7 +32,7 @@
 
       <div class="collapse navbar-collapse" id="main-nav">
         <ul class="nav navbar-nav">
-          <li class="{{navActive('retailer*')}}">{!!HTML::linkRoute('retailer.index', 'Retailers')!!}</li>
+          <li class="{{URLActive('retailer*')}}">{!!HTML::linkRoute('retailer.index', 'Retailers')!!}</li>
         </ul>
       </div>
     </div>
