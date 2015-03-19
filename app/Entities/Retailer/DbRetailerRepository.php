@@ -29,4 +29,17 @@ class DbRetailerRepository implements RetailerInterface {
 	{
 		return Retailer::orderBy('name')->get();
 	}
+
+	public function updateById($id, array $properties)
+	{
+		$retailer = $this->getById($id);
+
+		$retailer->name = $properties['name'];
+		$retailer->isOwnable = $properties['isOwnable'];
+		$retailer->isRentable = $properties['isRentable'];
+		$retailer->isDigital = $properties['isDigital'];
+		$retailer->isUltraviolet = $properties['isUltraviolet'];
+
+		$retailer->save();
+	}
 }

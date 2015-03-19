@@ -43,6 +43,6 @@
 	</div>
 	<hr>
 	<div class="form-group">
-		{!!Form::submit('Add New Retailer', ['class' => 'btn btn-success'])!!}
+		{!!Form::submit($formSubmit, ['class' => 'btn btn-success'])!!}
 	</div>
 {!!Form::close()!!}

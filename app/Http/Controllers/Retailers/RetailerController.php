@@ -27,13 +27,14 @@ class RetailerController extends Controller {
 	{
 		try
 		{
-			$retailers->create([
-				'name' => $request->input('name'),
-				'isDigital' => $request->input('isDigital', false),
-				'isUltraviolet' => $request->input('isUltraviolet', false),
-				'isRentable' => $request->input('isRentable', false),
-				'isOwnable' => $request->input('isOwnable', false),
-			]);
+			$retailers->create($request->only(
+				'name',
+				'isDigital',
+				'isUltraviolet',
+				'isRentable',
+				'isOwnable'
+				)
+			);
 
 			return redirect()->route('retailer.index');
 		}
@@ -51,6 +52,27 @@ class RetailerController extends Controller {
 	public function edit($id)
 	{
 		return view('retailer.edit');
+	}
+
+	public function update(RetailerInterface $retailers, Request $request, $id)
+	{
+		try
+		{
+			$retailers->updateById($id, $request->only(
+				'name',
+				'isDigital',
+				'isUltraviolet',
+				'isRentable',
+				'isOwnable'
+				)
+			);
+
+			return redirect()->route('retailer.show', $id);
+		}
+		catch(Exception $e)
+		{
+			dd($e->getMessage());
+		}
 	}
 
 }
