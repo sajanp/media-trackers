@@ -15,6 +15,10 @@ class AppServiceProvider extends ServiceProvider {
 		View::composer('retailer.partials.model-form', 'App\Http\ViewComposers\RetailerViewComposer@modelForm');
 		View::composer('retailer.show', 'App\Http\ViewComposers\RetailerViewComposer@show');
 		View::composer('retailer.index', 'App\Http\ViewComposers\RetailerViewComposer@index');
+
+		View::composer('theater.partials.model-form', 'App\Http\ViewComposers\TheaterViewComposer@modelForm');
+		View::composer('theater.show', 'App\Http\ViewComposers\TheaterViewComposer@show');
+		View::composer('theater.index', 'App\Http\ViewComposers\TheaterViewComposer@index');
 	}
 
 	/**
@@ -25,6 +29,7 @@ class AppServiceProvider extends ServiceProvider {
 	public function register()
 	{
 		$this->app->bind('App\Entities\Retailer\RetailerInterface', 'App\Entities\Retailer\DbRetailerRepository');
+		$this->app->bind('App\Entities\Theater\TheaterInterface', 'App\Entities\Theater\DbTheaterRepository');
 	}
 
 }

@@ -34,6 +34,7 @@
       <div class="collapse navbar-collapse" id="main-nav">
         <ul class="nav navbar-nav">
           <li class="{{URLActive('retailer*')}}">{!!HTML::linkRoute('retailer.index', 'Retailers')!!}</li>
+          <li class="{{URLActive('theater*')}}">{!!HTML::linkRoute('theater.index', 'Theaters')!!}</li>
         </ul>
       </div>
     </div>
