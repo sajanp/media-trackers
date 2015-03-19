@@ -35,6 +35,7 @@
         <ul class="nav navbar-nav">
           <li class="{{URLActive('retailer*')}}">{!!HTML::linkRoute('retailer.index', 'Retailers')!!}</li>
           <li class="{{URLActive('theater*')}}">{!!HTML::linkRoute('theater.index', 'Theaters')!!}</li>
+          <li class="{{URLActive('subscription*')}}">{!!HTML::linkRoute('subscription.index', 'Subscriptions')!!}</li>
         </ul>
       </div>
     </div>
