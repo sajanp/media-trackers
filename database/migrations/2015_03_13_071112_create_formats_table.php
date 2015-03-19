@@ -18,7 +18,6 @@ class CreateFormatsTable extends Migration {
 			$table->string('name')->unique();
 			$table->boolean('isOwnable')->default(false);
 			$table->boolean('isRentable')->default(false);
-			$table->boolean('isWatchable')->default(true);
 			$table->timestamps();
 		});
 	}
