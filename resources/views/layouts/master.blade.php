@@ -35,6 +35,8 @@
           <li class="{{URLActive('retailer*')}}">{!!HTML::linkRoute('retailer.index', 'Retailers')!!}</li>
           <li class="{{URLActive('theater*')}}">{!!HTML::linkRoute('theater.index', 'Theaters')!!}</li>
           <li class="{{URLActive('subscription*')}}">{!!HTML::linkRoute('subscription.index', 'Subscriptions')!!}</li>
+          <li class="{{URLActive('movie*')}}">{!!HTML::linkRoute('movie.index', 'Movies')!!}</li>
+          <li class="{{URLActive('tv*')}}">{!!HTML::linkRoute('tv.index', 'TV')!!}</li>
         </ul>
       </div>
     </div>
