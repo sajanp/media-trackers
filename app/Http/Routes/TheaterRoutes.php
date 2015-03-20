@@ -1,3 +1,3 @@
 <?php
 
-Route::resource('theater', 'Theaters\TheaterController');
+Route::resource('theater', 'Theater\TheaterController');

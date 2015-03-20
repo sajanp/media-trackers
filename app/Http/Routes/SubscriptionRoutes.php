@@ -1,3 +1,3 @@
 <?php
 
-Route::resource('subscription', 'Subscriptions\SubscriptionController');
+Route::resource('subscription', 'Subscription\SubscriptionController');

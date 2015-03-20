@@ -1,3 +1,3 @@
 <?php
 
-Route::resource('retailer', 'Retailers\RetailerController');
+Route::resource('retailer', 'Retailer\RetailerController');
