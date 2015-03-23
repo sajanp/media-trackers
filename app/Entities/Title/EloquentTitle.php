@@ -16,4 +16,9 @@ class EloquentTitle extends Model {
 	{
 		return $query->where('isTV', true);
 	}
+
+	public function purchases()
+	{
+		return $this->morphToMany('App\Entities\Purchase\EloquentPurchase', 'purchaseable');
+	}
 }

@@ -29,6 +29,9 @@ class AppServiceProvider extends ServiceProvider {
 		View::composer('title.movie.index', 'App\Http\ViewComposers\MovieViewComposer@index');
 		View::composer('title.tv.show', 'App\Http\ViewComposers\TVViewComposer@show');
 		View::composer('title.tv.index', 'App\Http\ViewComposers\TVViewComposer@index');
+
+		View::composer('purchase.partials.model-form', 'App\Http\ViewComposers\PurchaseViewComposer@modelForm');
+		View::composer('purchase.show', 'App\Http\ViewComposers\PurchaseViewComposer@show');
 	}
 
 	/**
@@ -42,6 +45,7 @@ class AppServiceProvider extends ServiceProvider {
 		$this->app->bind('App\Entities\Theater\TheaterInterface', 'App\Entities\Theater\DbTheaterRepository');
 		$this->app->bind('App\Entities\Subscription\SubscriptionInterface', 'App\Entities\Subscription\DbSubscriptionRepository');
 		$this->app->bind('App\Entities\Title\TitleInterface', 'App\Entities\Title\DbTitleRepository');
+		$this->app->bind('App\Entities\Purchase\PurchaseInterface', 'App\Entities\Purchase\DbPurchaseRepository');
 	}
 
 }

@@ -15,8 +15,10 @@ class CreatePurchasesTable extends Migration {
 		Schema::create('purchases', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->boolean('closed')->default(false);
 			$table->integer('retailer_id')->unsigned();
-			$table->integer('price');
+			$table->integer('amount');
+			$table->text('note')->nullable();
 			$table->date('purchased_on');
 			$table->timestamps();
 
