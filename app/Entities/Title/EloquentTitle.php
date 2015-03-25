@@ -27,4 +27,9 @@ class EloquentTitle extends Model {
 		dd($parent);
 	    return new App\Pivots\PurchasePurchaseable($parent, $attributes, $table, $exists);
 	}
+
+	public function ultraviolet()
+	{
+		return $this->morphMany('App\Entities\Ultraviolet\EloquentUltraviolet', 'ultravioletable');
+	}
 }

@@ -47,6 +47,7 @@ class AppServiceProvider extends ServiceProvider {
 		$this->app->bind('App\Entities\Title\TitleInterface', 'App\Entities\Title\DbTitleRepository');
 		$this->app->bind('App\Entities\Purchase\PurchaseInterface', 'App\Entities\Purchase\DbPurchaseRepository');
 		$this->app->bind('App\Entities\Format\FormatInterface', 'App\Entities\Format\DbFormatRepository');
+		$this->app->bind('App\Entities\Ultraviolet\UltravioletInterface', 'App\Entities\Ultraviolet\DbUltravioletRepository');
 	}
 
 }

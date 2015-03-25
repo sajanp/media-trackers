@@ -55,7 +55,7 @@ class EloquentPurchase extends Model {
 
 		$table = $table ?: str_plural($name);
 
-		if ($related == 'App\Entities\Title\EloquentTitle')
+		if ($name == 'purchaseable')
 		{
 			return new PurchaseMorphToMany(
 				$query, $this, $name, $table, $foreignKey,
@@ -67,5 +67,10 @@ class EloquentPurchase extends Model {
 			$query, $this, $name, $table, $foreignKey,
 			$otherKey, $caller, $inverse
 		);
+	}
+
+	public function ultraviolet()
+	{
+		return $this->morphMany('App\Entities\Ultraviolet\EloquentUltraviolet');
 	}
 }
