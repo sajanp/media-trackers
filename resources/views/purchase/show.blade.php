@@ -33,7 +33,7 @@
 				<tbody>
 					@foreach($purchase->movies->all() as $movie)
 						<tr>
-							<td>{{$movie->title}}</td>
+							<td>{!!HTML::linkRoute('movie.show', $movie->title, $movie->id)!!}</td>
 							<td>{{$movie->pivot->format->name}}</td>
 							<td>{{$movie->pivot->edition}}</td>
 							<td>

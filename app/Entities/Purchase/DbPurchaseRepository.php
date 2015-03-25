@@ -29,7 +29,7 @@ class DbPurchaseRepository implements PurchaseInterface {
 
 	public function getById($id, array $properties = array())
 	{
-		return Purchase::with($properties)->first();
+		return Purchase::with($properties)->where('id', $id)->first();
 	}
 
 	public function getOpen()

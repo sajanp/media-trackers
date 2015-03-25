@@ -36,6 +36,7 @@ class MovieViewComposer {
 
 	public function index(View $view)
 	{
-		$view->with('movies', $this->titles->allMovies());
+		$view->with('movies', $this->titles->allMovies(['purchases', 'ultraviolet']));
+		$view->with('formats', $this->formats->allOwnable());
 	}
 }

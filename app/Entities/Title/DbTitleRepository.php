@@ -49,7 +49,7 @@ class DbTitleRepository implements TitleInterface {
 
 	public function allMovies(array $with = array())
 	{
-		return Title::movies()->orderBy('slug')->get();
+		return Title::movies()->orderBy('slug')->with($with)->get();
 	}
 
 	public function allTV(array $with = array())

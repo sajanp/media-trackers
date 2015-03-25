@@ -23,7 +23,7 @@ class PurchaseViewComposer {
 
 	public function show(View $view)
 	{
-		$view->with('purchase', $this->purchases->getById($this->router->input('purchase'), ['movies']));
+		$view->with('purchase', $this->purchases->getById($this->router->input('purchase')));
 	}
 
 	public function modelForm(View $view)

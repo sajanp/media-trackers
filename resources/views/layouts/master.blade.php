@@ -44,8 +44,7 @@
   <div class="container">
     @if(App\Entities\Purchase\EloquentPurchase::where('closed', false)->exists())
       <div class="alert alert-info">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <strong>Open Purchase</strong> There is an open purchase.
+        <strong>Open Purchase</strong> There is an open purchase. {!!HTML::linkRoute('purchase.show', 'Go To Purchase', App\Entities\Purchase\EloquentPurchase::where('closed', false)->first()->id, ['class' => 'btn btn-success btn-xs pull-right'])!!}
       </div>
     @endif
     @yield('body')
