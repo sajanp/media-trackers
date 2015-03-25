@@ -42,6 +42,12 @@
     </div>
   </nav>
   <div class="container">
+    @if(App\Entities\Purchase\EloquentPurchase::where('closed', false)->exists())
+      <div class="alert alert-info">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>Open Purchase</strong> There is an open purchase.
+      </div>
+    @endif
     @yield('body')
   </div>
 </body>

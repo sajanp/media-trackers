@@ -21,7 +21,7 @@ class PurchaseController extends Controller {
 				'closed' => $request->input('closed', false),
 				'retailer_id' => $request->input('retailer_id'),
 				'amount' => $request->input('amount'),
-				'notes' => $request->input('notes'),
+				'note' => $request->input('note'),
 				'purchased_on' => $request->input('purchased_on')
 			]);
 

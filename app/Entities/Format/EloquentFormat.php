@@ -6,4 +6,9 @@ class EloquentFormat extends Model {
 
 	protected $table = 'formats';
 	protected $guarded = ['id', 'updated_at', 'created_at'];
+
+	public function scopeOwnable($query)
+	{
+		return $query->where('isOwnable', true);
+	}
 }
