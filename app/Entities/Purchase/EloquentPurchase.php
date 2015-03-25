@@ -22,7 +22,7 @@ class EloquentPurchase extends Model {
 
 	public function movies()
 	{
-		return $this->morphedByMany('App\Entities\Title\EloquentTitle', 'purchaseable', 'purchaseables', 'purchase_id')->withPivot('format_id', 'edition');
+		return $this->morphedByMany('App\Entities\Title\EloquentTitle', 'purchaseable', 'purchaseables', 'purchase_id')->withPivot('id', 'format_id', 'edition');
 	}
 
 	public function getDates()

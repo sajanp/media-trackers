@@ -18,9 +18,11 @@ class CreateUltravioletTable extends Migration {
 			$table->integer('ultravioletable_id');
 			$table->string('ultravioletable_type');
 			$table->integer('purchase_id')->unsigned()->nullable();
+			$table->integer('purchaseable_id')->unsigned();
 			$table->timestamps();
 
 			$table->foreign('purchase_id')->references('id')->on('purchases')->onUpdate('cascade')->onDelete('cascade');
+			$table->foreign('purchaseable_id')->references('id')->on('purchaseables')->onUpdate('cascade')->onDelete('cascade');
 		});
 	}
 

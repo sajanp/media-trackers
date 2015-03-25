@@ -36,7 +36,7 @@ class PurchasePurchaseableController extends Controller {
 
 		if ($this->request->input('isUltraviolet'))
 		{
-			$this->ultraviolet->create($purchaseable, $purchase);
+			$this->ultraviolet->create($purchaseable, $purchase, $this->request->input('edition'));
 		}
 
 		return redirect()->route('purchase.show', $purchase->id);

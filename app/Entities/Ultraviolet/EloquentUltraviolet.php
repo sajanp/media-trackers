@@ -15,4 +15,9 @@ class EloquentUltraviolet extends Model {
 	{
 		return $this->morphTo();
 	}
+
+	public function purchaseable()
+	{
+		return $this->belongsTo('App\Entities\Purchase\EloquentPurchaseable');
+	}
 }

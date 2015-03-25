@@ -31,10 +31,7 @@ class MovieViewComposer {
 
 		$purchase = $this->purchases->getOpen();
 
-		if ($purchase)
-		{
-			$view->with('purchase', $purchase);
-		}
+		$view->with('purchase', $purchase);
 	}
 
 	public function index(View $view)
