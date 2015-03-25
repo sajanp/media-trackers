@@ -27,6 +27,7 @@
 						<th>Item</th>
 						<th>Format</th>
 						<th>Edition</th>
+						<th>Ultraviolet</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -35,6 +36,11 @@
 							<td>{{$movie->title}}</td>
 							<td>{{$movie->pivot->format->name}}</td>
 							<td>{{$movie->pivot->edition}}</td>
+							<td>
+								@if($movie->pivot->ultraviolet)
+									Yes
+								@endif
+							</td>
 						</tr>
 					@endforeach
 				</tbody>

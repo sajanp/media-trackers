@@ -12,4 +12,9 @@ class PurchasePurchaseable extends MorphPivot {
 	{
 		return $this->belongsTo('App\Entities\Format\EloquentFormat', 'format_id');
 	}
+
+	public function ultraviolet()
+	{
+		return $this->hasOne('App\Entities\Ultraviolet\EloquentUltraviolet', 'purchaseable_id');
+	}
 }

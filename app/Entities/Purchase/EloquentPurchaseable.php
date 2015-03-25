@@ -9,4 +9,5 @@ class EloquentPurchaseable extends Model {
 
 	protected $table = 'purchaseables';
 	protected $guarded = ['id', 'updated_at', 'created_at'];
+
 }
