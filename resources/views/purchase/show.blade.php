@@ -47,4 +47,11 @@
 			</table>
 		</div>
 	</div>
+	@if(!$purchase->closed)
+		{!!Form::open(['method' => 'put', 'route' => ['purchase.close', $purchase->id]])!!}
+			<div class="form-group">
+				{!!Form::submit('Close Purchase', ['class' => 'btn btn-warning'])!!}
+			</div>
+		{!!Form::close()!!}
+	@endif
 @stop

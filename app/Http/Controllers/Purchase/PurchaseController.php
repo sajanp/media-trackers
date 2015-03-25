@@ -38,4 +38,11 @@ class PurchaseController extends Controller {
 		return view('purchase.show');
 	}
 
+	public function close(PurchaseInterface $purchases, $purchase)
+	{
+		$purchases->closePurchase($purchase);
+
+		return redirect()->route('purchase.show', $purchase);
+	}
+
 }
