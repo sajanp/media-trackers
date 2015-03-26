@@ -15,9 +15,12 @@
 					<td>
 						@foreach($formats as $format)
 							@if($movie->purchases()->where('format_id', $format->id)->exists())
-								<span class="label label-info">{{$format->name}}</span>
+								<span class="label label-{{$format->name}}">{{$format->name}}</span>
 							@endif
 						@endforeach
+						@if($movie->ultraviolet->count())
+							<span class="label label-Ultraviolet">Ultraviolet</span>
+						@endif
 					</td>
 				</tr>
 			@endforeach
