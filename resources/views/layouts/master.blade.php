@@ -41,7 +41,7 @@
           <li class="{{URLActive('tv*')}}">{!!HTML::linkRoute('tv.index', 'TV')!!}</li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li class="{{navActive('purchase.create')">{!!HTML::linkRoute('purchase.create', 'New Purchase')!!</li>
+          <li class="{{navActive('purchase.create')">{!!HTML::linkRoute('purchase.create', 'New Purchase')!!}</li>
         </ul>
       </div>
     </div>
