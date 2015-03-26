@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Movie Library</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/sandstone/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/yeti/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -39,6 +39,9 @@
           <li class="{{URLActive('subscription*')}}">{!!HTML::linkRoute('subscription.index', 'Subscriptions')!!}</li>
           <li class="{{URLActive('movie*')}}">{!!HTML::linkRoute('movie.index', 'Movies')!!}</li>
           <li class="{{URLActive('tv*')}}">{!!HTML::linkRoute('tv.index', 'TV')!!}</li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="{{navActive('purchase.create')">{!!HTML::linkRoute('purchase.create', 'New Purchase')!!</li>
         </ul>
       </div>
     </div>
