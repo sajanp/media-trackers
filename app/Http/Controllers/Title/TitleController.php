@@ -13,6 +13,27 @@ class TitleController extends Controller {
 		return view('title.create');
 	}
 
+	public function multiCreate()
+	{
+		return view ('title.multi-create');
+	}
+
+	public function multiStore(TitleInterface $titles, Request $request)
+	{
+		foreach ($request->get('titles') as $t)
+		{
+			if (strlen($t['title']) > 0)
+			{
+				$title = $titles->create([
+					'title' => $t['title'],
+					'isTV' => array_get($t, 'isTV', false)
+				]);
+			}
+		}
+
+		return redirect()->route('movie.index');
+	}
+
 	public function store(TitleInterface $titles, Request $request)
 	{
 		try
