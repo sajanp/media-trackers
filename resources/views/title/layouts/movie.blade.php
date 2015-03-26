@@ -24,6 +24,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="{{navActive('title.create')}}">{!! HTML::linkRoute('title.create', 'Add New') !!}</li>
+          <li class="{{navActive('title.multi-create')}}">{!! HTML::linkRoute('title.multi-create', 'Multi Add') !!}</li>
         </ul>
       </div>
     </div>
