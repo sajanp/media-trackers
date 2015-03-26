@@ -19,13 +19,7 @@ class EloquentTitle extends Model {
 
 	public function purchases()
 	{
-		return $this->morphToMany('App\Entities\Purchase\EloquentPurchase', 'purchaseable', 'purchaseables', null, 'purchaseable_id');
-	}
-
-	public function newPivot(Model $parent, array $attributes, $table, $exists)
-	{
-		dd($parent);
-	    return new App\Pivots\PurchasePurchaseable($parent, $attributes, $table, $exists);
+		return $this->morphToMany('App\Entities\Purchase\EloquentPurchase', 'purchaseable', null, 'purchaseable_id', 'purchase_id')->withPivot('format_id', 'id');
 	}
 
 	public function ultraviolet()
