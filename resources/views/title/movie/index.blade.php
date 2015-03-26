@@ -13,7 +13,6 @@
 				<tr>
 					<td>{!! HTML::linkRoute('movie.show', $movie->title, $movie->id) !!}</td>
 					<td>
-					<?php dd($formats); ?>
 						@foreach($formats as $format)
 							@if($movie->purchases()->where('format_id', $format->id)->exists())
 								<span class="label label-info">{{$format->name}}</span>
