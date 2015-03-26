@@ -48,4 +48,14 @@ class DbPurchaseRepository implements PurchaseInterface {
 		$purchase->closed = true;
 		$purchase->save();
 	}
+
+	public function deleteEmptyPurchases()
+	{
+		foreach(Purchase::has('movies', '=', 0)->get() as $purchase)
+		{
+			$purchase->delete();
+		}
+
+		return true;
+	}
 }
