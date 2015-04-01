@@ -15,6 +15,6 @@ class PurchasePurchaseable extends MorphPivot {
 
 	public function ultraviolet()
 	{
-		return $this->hasOne('App\Entities\Ultraviolet\EloquentUltraviolet', 'purchaseable_id');
+		return $this->hasMany('App\Entities\Ultraviolet\EloquentUltraviolet', 'purchaseable_id');
 	}
 }
