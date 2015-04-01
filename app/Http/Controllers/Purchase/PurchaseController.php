@@ -18,6 +18,16 @@ class PurchaseController extends Controller {
 		return view('purchase.create');
 	}
 
+	public function quickCreate()
+	{
+		return view('purchase.quick-create');
+	}
+
+	public function quickStore()
+	{
+		
+	}
+
 	public function store(PurchaseInterface $purchases, Request $request)
 	{
 		try

@@ -33,6 +33,7 @@ class AppServiceProvider extends ServiceProvider {
 		View::composer('purchase.partials.model-form', 'App\Http\ViewComposers\PurchaseViewComposer@modelForm');
 		View::composer('purchase.show', 'App\Http\ViewComposers\PurchaseViewComposer@show');
 		View::composer('purchase.index', 'App\Http\ViewComposers\PurchaseViewComposer@index');
+		View::composer('purchase.quick-create', 'App\Http\ViewComposers\PurchaseViewComposer@quickCreate');
 	}
 
 	/**
