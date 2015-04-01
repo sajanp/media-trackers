@@ -26,7 +26,7 @@
 						<tbody>
 							<tr>
 								<td>Purchases</td>
-								<td>${{number_format($movie->purchases->sum('amount'), 2)}}</td>
+								<td>${{number_format($movie->purchases->unique()->sum('amount'), 2)}}</td>
 							</tr>
 						</tbody>
 					</table>
