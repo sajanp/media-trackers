@@ -36,7 +36,7 @@
 					<table class="table table-condensed">
 						<tr>
 							<td>Purchased</td>
-							<td>{{$movie->purchases->count()}} times</td>
+							<td>{{$movie->purchases->unique()->count()}} times</td>
 						</tr>
 					</table>
 				</div>
