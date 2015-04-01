@@ -28,14 +28,6 @@
 								<td>Purchases</td>
 								<td>${{number_format($movie->purchases->sum('amount'), 2)}}</td>
 							</tr>
-							<tr>
-								<td>Rentals</td>
-								<td>$4.00</td>
-							</tr>
-							<tr>
-								<td>Theater</td>
-								<td>$0.00</td>
-							</tr>
 						</tbody>
 					</table>
 				</div>
@@ -43,16 +35,8 @@
 					<h3>Activity</h3>
 					<table class="table table-condensed">
 						<tr>
-							<td>Watched</td>
-							<td>5 times</td>
-						</tr>
-						<tr>
 							<td>Purchased</td>
 							<td>{{$movie->purchases->count()}} times</td>
-						</tr>
-						<tr>
-							<td>Rented</td>
-							<td>1 time</td>
 						</tr>
 					</table>
 				</div>
