@@ -44,7 +44,6 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="{{navActive('purchase.create')">{!!HTML::linkRoute('purchase.create', 'New Purchase')!!}</li>
-          <li class="{{navActive('purchase.quick-create')">{!!HTML::linkRoute('purchase.quick-create', 'Quick Purchase')!!}</li>
         </ul>
       </div>
     </div>

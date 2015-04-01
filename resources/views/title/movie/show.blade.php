@@ -12,6 +12,7 @@
 				<li><a href="#">Viewings</a></li>
 			</ul>
 			<hr>
+			<p>{!! HTML::linkRoute('movie.purchase.create', 'Add Purchase', $movie->id, ['class' => 'btn btn-success btn-block']) !!}</p>
 			<p>{!! HTML::linkRoute('title.edit', 'Edit ' . $movie->name, $movie->id, ['class' => 'btn btn-warning btn-xs btn-block']) !!}</p>
 		</div>
 		<div class="col-md-9">

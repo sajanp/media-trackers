@@ -27,13 +27,13 @@ class AppServiceProvider extends ServiceProvider {
 		View::composer('title.partials.model-form', 'App\Http\ViewComposers\TitleViewComposer@modelForm');
 		View::composer('title.movie.show', 'App\Http\ViewComposers\MovieViewComposer@show');
 		View::composer('title.movie.index', 'App\Http\ViewComposers\MovieViewComposer@index');
+		View::composer('title.movie.purchase.create', 'App\Http\ViewComposers\MovieViewComposer@purchaseCreate');
 		View::composer('title.tv.show', 'App\Http\ViewComposers\TVViewComposer@show');
 		View::composer('title.tv.index', 'App\Http\ViewComposers\TVViewComposer@index');
 
 		View::composer('purchase.partials.model-form', 'App\Http\ViewComposers\PurchaseViewComposer@modelForm');
 		View::composer('purchase.show', 'App\Http\ViewComposers\PurchaseViewComposer@show');
 		View::composer('purchase.index', 'App\Http\ViewComposers\PurchaseViewComposer@index');
-		View::composer('purchase.quick-create', 'App\Http\ViewComposers\PurchaseViewComposer@quickCreate');
 	}
 
 	/**

@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Entities\Purchase\PurchaseInterface;
 use App\Entities\Retailer\RetailerInterface;
 use App\Entities\Format\FormatInterface;
+use App\Entities\Title\TitleInterface;
 use Illuminate\Routing\Router;
 
 class PurchaseViewComposer {
@@ -14,14 +15,16 @@ class PurchaseViewComposer {
 	private $purchases;
 	private $router;
 	private $format;
+	private $titles;
 
-	public function __construct(Request $request, RetailerInterface $retailers, PurchaseInterface $purchases, Router $router, FormatInterface $formats)
+	public function __construct(TitleInterface $titles, Request $request, RetailerInterface $retailers, PurchaseInterface $purchases, Router $router, FormatInterface $formats)
 	{
 		$this->request = $request;
 		$this->retailers = $retailers;
 		$this->purchases = $purchases;
 		$this->router = $router;
 		$this->formats = $formats;
+		$this->titles = $titles;
 	}
 
 	public function index(View $view)
@@ -32,20 +35,6 @@ class PurchaseViewComposer {
 	public function show(View $view)
 	{
 		$view->with('purchase', $this->purchases->getById($this->router->input('purchase')));
-	}
-
-	public function quickCreate(View $view)
-	{
-		$data = [
-			'retailers' => $this->retailers->allOwnable()->lists('name', 'id'),
-			'purchase' => $this->purchases->fresh(),
-			'formDestination' => 'purchase.quick-store',
-			'formMethod' => 'post',
-			'formSubmit' => 'Add Purchase',
-			'formats' => $this->formats->allOwnable()->lists('name', 'id')
-		];
-
-		$view->with($data);
 	}
 
 	public function modelForm(View $view)
