@@ -37,9 +37,12 @@
 							<td>{{$movie->pivot->format->name}}</td>
 							<td>{{$movie->pivot->edition}}</td>
 							<td>
-								@if($movie->ultraviolet->count())
-									Yes
-								@endif
+								@if($movie->ultraviolet()->whereHas('purchaseable', function($q) use ($movie)
+					{
+						$q->where('edition', $movie->pivot->edition);
+					})->count())
+						Yes
+					@endif
 							</td>
 						</tr>
 					@endforeach
