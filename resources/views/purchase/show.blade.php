@@ -37,7 +37,7 @@
 							<td>{{$movie->pivot->format->name}}</td>
 							<td>{{$movie->pivot->edition}}</td>
 							<td>
-								@if($movie->pivot->ultraviolet)
+								@if($movie->ultraviolet->count())
 									Yes
 								@endif
 							</td>
