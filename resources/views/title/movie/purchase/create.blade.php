@@ -61,3 +61,9 @@
 
 	{!!Form::close()!!}
 @stop
+
+<script>
+	$(function() {
+		$("#purchased_on").datepicker({ dateFormat: "yy-mm-dd" });
+	});
+</script>
