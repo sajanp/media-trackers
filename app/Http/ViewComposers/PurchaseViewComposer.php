@@ -21,6 +21,11 @@ class PurchaseViewComposer {
 		$this->router = $router;
 	}
 
+	public function index(View $view)
+	{
+		$view->with('purchases', $this->purchases->getAll(['retailer', 'movies']));
+	}
+
 	public function show(View $view)
 	{
 		$view->with('purchase', $this->purchases->getById($this->router->input('purchase')));

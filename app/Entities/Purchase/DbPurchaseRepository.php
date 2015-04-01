@@ -58,4 +58,9 @@ class DbPurchaseRepository implements PurchaseInterface {
 
 		return true;
 	}
+
+	public function getAll(array $with = array())
+	{
+		return Purchase::with($with)->orderBy('purchased_on')->get();
+	}
 }

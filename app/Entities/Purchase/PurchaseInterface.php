@@ -8,4 +8,5 @@ interface PurchaseInterface {
 	public function getById($id, array $with);
 	public function closePurchase($id);
 	public function deleteEmptyPurchases();
+	public function getAll();
 }
