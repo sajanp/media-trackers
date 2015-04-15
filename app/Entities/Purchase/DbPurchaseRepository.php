@@ -49,6 +49,22 @@ class DbPurchaseRepository implements PurchaseInterface {
 		$purchase->save();
 	}
 
+	public function openPurchase($id)
+	{
+		if (!$this->getOpen())
+		{
+			$purchase = $this->getById($id);
+			$purchase->closed = false;
+			$purchase->save();
+
+			return $purchase;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
 	public function deleteEmptyPurchases()
 	{
 		foreach(Purchase::has('movies', '=', 0)->get() as $purchase)

@@ -7,6 +7,7 @@ interface PurchaseInterface {
 	public function getOpen();
 	public function getById($id, array $with);
 	public function closePurchase($id);
+	public function openPurchase($id);
 	public function deleteEmptyPurchases();
 	public function getAll();
 }
