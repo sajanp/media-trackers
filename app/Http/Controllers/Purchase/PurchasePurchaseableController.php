@@ -41,4 +41,30 @@ class PurchasePurchaseableController extends Controller {
 
 		return redirect()->route('purchase.show', $purchase->id);
 	}
+
+	public function edit($purchaseId, $purchaseableId)
+	{
+		return view('purchase.purchaseable.edit');
+	}
+
+	public function update($purchaseId, $purchaseableId)
+	{
+		$purchase = $this->purchases->getById($purchaseId);
+		$purchaseable = $this->purchases->getPurchaseableById($purchaseId, $purchaseableId);
+
+		$this->ultraviolet->delete($purchaseableId);
+
+		$purchaseable->edition = $this->request->input('edition');
+		$purchaseable->format_id = $this->request->input('format_id');
+
+		$purchaseable->save();
+
+
+		if ($this->request->input('isUltraviolet'))
+		{
+			$this->ultraviolet->create($purchaseable->purchaseable, $purchase, $this->request->input('edition'));
+		}
+
+		return redirect()->route('purchase.show', $purchaseId);
+	}
 }

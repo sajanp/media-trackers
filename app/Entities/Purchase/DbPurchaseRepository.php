@@ -1,6 +1,7 @@
 <?php namespace App\Entities\Purchase;
 
 use App\Entities\Purchase\EloquentPurchase as Purchase;
+use App\Entities\Purchase\EloquentPurchaseable as Purchaseable;
 
 class DbPurchaseRepository implements PurchaseInterface {
 
@@ -30,6 +31,11 @@ class DbPurchaseRepository implements PurchaseInterface {
 	public function getById($id, array $properties = array())
 	{
 		return Purchase::with($properties)->where('id', $id)->first();
+	}
+
+	public function getPurchaseableById($purchaseId, $purchaseableId)
+	{
+		return Purchaseable::where('purchase_id', $purchaseId)->where('id', $purchaseableId)->first();
 	}
 
 	public function getOpen()

@@ -28,6 +28,9 @@
 						<th>Format</th>
 						<th>Edition</th>
 						<th>Ultraviolet</th>
+						@if(!$purchase->closed)
+							<th>Edit</th>
+						@endif
 					</tr>
 				</thead>
 				<tbody>
@@ -37,13 +40,13 @@
 							<td>{{$movie->pivot->format->name}}</td>
 							<td>{{$movie->pivot->edition}}</td>
 							<td>
-								@if($movie->ultraviolet()->where('purchase_id', $purchase->id)->whereHas('purchaseable', function($q) use ($movie)
-					{
-						$q->where('edition', $movie->pivot->edition);
-					})->count())
-						Yes
-					@endif
+								@if($movie->ultraviolet()->where('purchase_id', $purchase->id)->whereHas('purchaseable', function($q) use ($movie){$q->where('edition', $movie->pivot->edition);})->count())
+									Yes
+								@endif
 							</td>
+							@if(!$purchase->closed)
+								<td>{!!HTML::linkRoute('purchase.purchaseable.edit', 'Edit', [$purchase->id, $movie->pivot->id])!!}</td>
+							@endif
 						</tr>
 					@endforeach
 				</tbody>

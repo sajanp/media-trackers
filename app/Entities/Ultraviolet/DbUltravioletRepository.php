@@ -26,6 +26,16 @@ class DbUltravioletRepository implements UltravioletInterface {
 		}
 	}
 
+	public function delete($purchaseableId)
+	{
+		$ultraviolet = Ultraviolet::where('purchaseable_id', $purchaseableId)->first();
+
+		if ($ultraviolet)
+		{
+			$ultraviolet->delete();
+		}
+	}
+
 	private function checkExistence(Model $model, $edition)
 	{
 		if ($model->ultraviolet()->whereHas('purchaseable', function($query) use ($edition)
