@@ -67,4 +67,11 @@ class PurchaseController extends Controller {
 		return redirect()->route('purchase.show', $purchase);
 	}
 
+	public function destroy(PurchaseInterface $purchases, $purchase)
+	{
+		$purchases->delete($purchase);
+
+		return redirect()->route('purchase.index');
+	}
+
 }

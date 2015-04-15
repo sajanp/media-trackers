@@ -59,6 +59,12 @@
 				{!!Form::submit('Close Purchase', ['class' => 'btn btn-warning'])!!}
 			</div>
 		{!!Form::close()!!}
+
+		{!!Form::open(['method' => 'delete', 'route' => ['purchase.destroy', $purchase->id]])!!}
+			<div class="form-group">
+				{!!Form::submit('Delete Purchase', ['class' => 'btn btn-danger btn-xs'])!!}
+			</div>
+		{!!Form::close()!!}
 	@else
 		{!!Form::open(['method' => 'put', 'route' => ['purchase.open', $purchase->id]])!!}
 			<div class="form-group">

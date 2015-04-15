@@ -10,5 +10,6 @@ interface PurchaseInterface {
 	public function closePurchase($id);
 	public function openPurchase($id);
 	public function deleteEmptyPurchases();
+	public function delete($id);
 	public function getAll();
 }

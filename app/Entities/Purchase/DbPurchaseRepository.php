@@ -48,6 +48,16 @@ class DbPurchaseRepository implements PurchaseInterface {
 		return false;
 	}
 
+	public function delete($id)
+	{
+		$purchase = $this->getById($id);
+
+		if ($purchase)
+		{
+			$purchase->delete();
+		}
+	}
+
 	public function closePurchase($id)
 	{
 		$purchase = $this->getById($id);
