@@ -60,4 +60,11 @@ class PurchaseController extends Controller {
 		return redirect()->route('purchase.show', $purchase);
 	}
 
+	public function open(PurchaseInterface $purchases, $purchase)
+	{
+		$purchases->openPurchase($purchase);
+
+		return redirect()->route('purchase.show', $purchase);
+	}
+
 }

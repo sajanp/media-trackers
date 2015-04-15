@@ -56,5 +56,11 @@
 				{!!Form::submit('Close Purchase', ['class' => 'btn btn-warning'])!!}
 			</div>
 		{!!Form::close()!!}
+	@else
+		{!!Form::open(['method' => 'put', 'route' => ['purchase.open', $purchase->id]])!!}
+			<div class="form-group">
+				{!!Form::submit('Open Purchase', ['class' => 'btn btn-warning'])!!}
+			</div>
+		{!!Form::close()!!}
 	@endif
 @stop
