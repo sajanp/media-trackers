@@ -26,4 +26,10 @@
 			{!!Form::submit('Update Item', ['class' => 'btn btn-primary'])!!}
 		</div>
 	{!!Form::close()!!}
+
+	{!!Form::open(['method' => 'delete', 'route' => ['purchase.purchaseable.destroy', $purchase->id, $purchaseable->id]])!!}
+
+	{!!Form::submit('Delete Item', ['class' => 'btn btn-xs btn-danger'])!!}
+
+	{!!Form::close()!!}
 @stop

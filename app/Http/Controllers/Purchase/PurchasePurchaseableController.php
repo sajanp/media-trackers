@@ -67,4 +67,16 @@ class PurchasePurchaseableController extends Controller {
 
 		return redirect()->route('purchase.show', $purchaseId);
 	}
+
+	public function destroy($purchaseId, $purchaseableId)
+	{
+		$purchaseable = $this->purchases->getPurchaseableById($purchaseId, $purchaseableId);
+
+		if ($purchaseable)
+		{
+			$purchaseable->delete();
+		}
+
+		return redirect()->route('purchase.show', $purchaseId);
+	}
 }
