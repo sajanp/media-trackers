@@ -83,4 +83,11 @@ class TitleController extends Controller {
 		}
 	}
 
+	public function destroy(TitleInterface $titles, $id)
+	{
+		$titles->deleteById($id);
+
+		return redirect()->route('movie.index');
+	}
+
 }

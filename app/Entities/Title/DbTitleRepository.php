@@ -3,8 +3,16 @@
 use App\Entities\Title\EloquentTitle as Title;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use App\Entities\Purchase\PurchaseInterface;
 
 class DbTitleRepository implements TitleInterface {
+
+	private $purchases;
+
+	public function __construct(PurchaseInterface $purchases)
+	{
+		$this->purchases = $purchases;
+	}
 
 	public function fresh()
 	{
@@ -67,6 +75,14 @@ class DbTitleRepository implements TitleInterface {
 		$title->save();
 
 		return $title;
+	}
+
+	public function deleteById($id)
+	{
+		$title = $this->getById($id);
+		$title->delete();
+
+		$this->purchases->deleteEmptyPurchases();
 	}
 
 	private function generateSlug($title)

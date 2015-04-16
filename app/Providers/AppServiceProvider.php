@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider {
 		View::composer('subscription.index', 'App\Http\ViewComposers\SubscriptionViewComposer@index');
 
 		View::composer('title.partials.model-form', 'App\Http\ViewComposers\TitleViewComposer@modelForm');
+		View::composer('title.edit', 'App\Http\ViewComposers\TitleViewComposer@modelForm');
 		View::composer('title.movie.show', 'App\Http\ViewComposers\MovieViewComposer@show');
 		View::composer('title.movie.index', 'App\Http\ViewComposers\MovieViewComposer@index');
 		View::composer('title.movie.purchase.create', 'App\Http\ViewComposers\MovieViewComposer@purchaseCreate');

@@ -10,4 +10,5 @@ interface TitleInterface {
 	public function all(array $with);
 	public function allMovies(array $with);
 	public function allTV(array $with);
+	public function deleteById($id);
 }
