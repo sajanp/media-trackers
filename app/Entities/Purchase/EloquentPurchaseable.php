@@ -21,4 +21,9 @@ class EloquentPurchaseable extends Model {
 		return $this->hasOne('App\Entities\Ultraviolet\EloquentUltraviolet', 'purchaseable_id');
 	}
 
+	public function format()
+	{
+		return $this->belongsto('App\Entities\Format\EloquentFormat');
+	}
+
 }

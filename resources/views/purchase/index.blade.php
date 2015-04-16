@@ -21,7 +21,7 @@
 					<td>
 						<ul>
 							@foreach($purchase->movies->all() as $movie)
-								<li>{{$movie->title}}</li>	
+								<li>{{$movie->title}} @if (strlen($movie->pivot->edition) > 1) - {{$movie->pivot->edition}} @endif ({{$movie->pivot->format->name}})</li>	
 							@endforeach
 						</ul>
 					</td>
