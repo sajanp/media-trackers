@@ -46,7 +46,7 @@ class PurchaseViewComposer {
 				'formDestination' => 'purchase.store',
 				'formMethod' => 'post',
 				'formSubmit' => 'Start New Purchase'
-			]; 
+			];
 		}
 		elseif (in_array('edit', $this->request->segments()))
 		{
@@ -55,10 +55,10 @@ class PurchaseViewComposer {
 				'formDestination' => ['purchase.update', $this->router->input('purchase')],
 				'formMethod' => 'put',
 				'formSubmit' => 'Update Purchase'
-			];	
+			];
 		}
 
-		$data['retailers'] = $this->retailers->allOwnable()->lists('name', 'id');
+		$data['retailers'] = $this->retailers->allOwnable()->lists('name', 'id')->all();
 
 		$view->with($data);
 	}
