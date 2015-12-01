@@ -136,6 +136,7 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Html\HtmlServiceProvider',
+		'Illuminate\Broadcasting\BroadcastServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -145,6 +146,7 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+		'App\Providers\AuthServiceProvider',
 
 	],
 
@@ -195,6 +197,8 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'HTML'      => 'Illuminate\Html\HtmlFacade',
     	'Form'      => 'Illuminate\Html\FormFacade',
+
+		'Gate' => Illuminate\Support\Facades\Gate::class,
 
 	],
 
