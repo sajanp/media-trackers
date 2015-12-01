@@ -1,21 +1,11 @@
-<?php namespace App\Entities\Title;
+<?php namespace App\Entities\Movie;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EloquentTitle extends Model {
+class EloquentMovie extends Model {
 
-	protected $table = 'titles';
+	protected $table = 'movies';
 	protected $guarded = ['id', 'updated_at', 'created_at'];
-
-	public function scopeMovies($query)
-	{
-		return $query->where('isTV', false);
-	}
-
-	public function scopeTV($query)
-	{
-		return $query->where('isTV', true);
-	}
 
 	public function purchases()
 	{

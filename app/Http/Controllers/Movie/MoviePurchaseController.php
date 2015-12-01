@@ -1,27 +1,27 @@
-<?php namespace App\Http\Controllers\Title;
+<?php namespace App\Http\Controllers\Movie;
 
 use App\Http\Controllers\Controller;
-use App\Entities\Title\TitleInterface;
+use App\Entities\Movie\MovieInterface;
 use App\Entities\Purchase\PurchaseInterface;
 use App\Entities\Ultraviolet\UltravioletInterface;
-use App\Entities\Title\EloquentTitle as Title;
+use App\Entities\Movie\EloquentMovie as Movie;
 use Illuminate\Contracts\Support\MessageBag;
 use Illuminate\Http\Request;
 
 class MoviePurchaseController extends Controller {
 
 	private $purchases;
-	private $titles;
+	private $movies;
 
-	public function __construct(PurchaseInterface $purchases, TitleInterface $titles)
+	public function __construct(PurchaseInterface $purchases, MovieInterface $movies)
 	{
 		$this->purchases = $purchases;
-		$this->titles = $titles;
+		$this->movies = $movies;
 	}
 
 	public function create($movieId)
 	{
-		return view('title.movie.purchase.create');
+		return view('movie.purchase.create');
 	}
 
 	public function store(UltravioletInterface $ultraviolet, Request $request, $movieId)
@@ -36,7 +36,7 @@ class MoviePurchaseController extends Controller {
 				'purchased_on' => $request->input('purchased_on')
 			]);
 
-			$movie = $this->titles->getMovieById($movieId);
+			$movie = $this->movies->getById($movieId);
 
 			foreach($request->input('formats', array()) as $format)
 			{

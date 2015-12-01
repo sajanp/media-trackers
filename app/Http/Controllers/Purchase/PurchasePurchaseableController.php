@@ -22,7 +22,7 @@ class PurchasePurchaseableController extends Controller {
 
 		switch ($this->request->get('purchaseable_type')) {
 			case 'title':
-				$this->purchaseables = $container->make('App\Entities\Title\TitleInterface');
+				$this->purchaseables = $container->make('App\Entities\Movie\MovieInterface');
 				break;
 		}
 	}
