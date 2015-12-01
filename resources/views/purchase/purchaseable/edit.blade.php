@@ -11,7 +11,7 @@
 		</div>
 		<div class="form-group">
 			{!!Form::label('format_id', 'Format')!!}
-			{!!Form::select('format_id', $formats->lists('name', 'id'), null, ['class' => 'form-control'])!!}
+			{!!Form::select('format_id', $formats->lists('name', 'id')->all(), null, ['class' => 'form-control'])!!}
 		</div>
 		<div class="form-group">
 			<div class="checkbox">
