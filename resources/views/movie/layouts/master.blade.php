@@ -23,8 +23,8 @@
           <li><a href="#">In Theaters</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li class="{{navActive('title.create')}}">{!! HTML::linkRoute('title.create', 'Add New') !!}</li>
-          <li class="{{navActive('title.multi-create')}}">{!! HTML::linkRoute('title.multi-create', 'Multi Add') !!}</li>
+          <li class="{{navActive('movie.create')}}">{!! HTML::linkRoute('movie.create', 'Add New') !!}</li>
+          <li class="{{navActive('movie.multi-create')}}">{!! HTML::linkRoute('movie.multi-create', 'Multi Add') !!}</li>
         </ul>
       </div>
     </div>

@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Entities\Purchase\PurchaseInterface;
 use App\Entities\Retailer\RetailerInterface;
 use App\Entities\Format\FormatInterface;
-use App\Entities\Title\TitleInterface;
+use App\Entities\Movie\MovieInterface;
 use Illuminate\Routing\Router;
 
 class PurchaseViewComposer {
@@ -15,16 +15,16 @@ class PurchaseViewComposer {
 	private $purchases;
 	private $router;
 	private $format;
-	private $titles;
+	private $movies;
 
-	public function __construct(TitleInterface $titles, Request $request, RetailerInterface $retailers, PurchaseInterface $purchases, Router $router, FormatInterface $formats)
+	public function __construct(MovieInterface $movies, Request $request, RetailerInterface $retailers, PurchaseInterface $purchases, Router $router, FormatInterface $formats)
 	{
 		$this->request = $request;
 		$this->retailers = $retailers;
 		$this->purchases = $purchases;
 		$this->router = $router;
 		$this->formats = $formats;
-		$this->titles = $titles;
+		$this->movies = $movies;
 	}
 
 	public function index(View $view)

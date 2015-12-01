@@ -1,4 +1,4 @@
-@extends('title.layouts.movie')
+@extends('movie.layouts.master')
 
 @section('body')
 	@parent

@@ -1,11 +1,11 @@
-@extends('title.layouts.movie')
+@extends('movie.layouts.master')
 
 @section('body')
 	@parent
 	<h1>Add Purchase For {{$movie->title}}</h1>
 	{!!Form::model($purchase, ['route' => $formDestination, 'method' => $formMethod])!!}
 	{!!Form::hidden('purchaseable_type', 'title')!!}
-		
+
 	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group">

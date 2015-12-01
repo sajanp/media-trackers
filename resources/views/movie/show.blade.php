@@ -1,4 +1,4 @@
-@extends('title.layouts.movie')
+@extends('movie.layouts.master')
 
 @section('body')
 	@parent
@@ -13,11 +13,11 @@
 			</ul>
 			<hr>
 			<p>{!! HTML::linkRoute('movie.purchase.create', 'Add Purchase', $movie->id, ['class' => 'btn btn-success btn-block']) !!}</p>
-			<p>{!! HTML::linkRoute('title.edit', 'Edit ' . $movie->name, $movie->id, ['class' => 'btn btn-warning btn-xs btn-block']) !!}</p>
+			<p>{!! HTML::linkRoute('movie.edit', 'Edit ' . $movie->name, $movie->id, ['class' => 'btn btn-warning btn-xs btn-block']) !!}</p>
 		</div>
 		<div class="col-md-9">
 			@if($purchase)
-				@include('title.movie.partials.add-to-open-purchase')
+				@include('movie.partials.add-to-open-purchase')
 			@endif
 			<div class="row">
 				<div class="col-md-4">
