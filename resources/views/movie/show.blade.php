@@ -40,6 +40,21 @@
 						</tr>
 					</table>
 				</div>
+				<div class="col-md-4">
+					<h3>Editions Owned</h3>
+					<table class="table table-condensed">
+						<tr>
+							<th>Edition</th>
+							<th>Format</th>
+						</tr>
+						@foreach($editions as $edition)
+							<tr>
+								<td>{{$edition->edition}}</td>
+								<td>{{$edition->format->name}}</td>
+							</tr>
+						@endforeach
+					</table>
+				</div>
 			</div>
 		</div>
 	</div>

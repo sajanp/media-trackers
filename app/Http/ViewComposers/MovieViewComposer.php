@@ -31,6 +31,7 @@ class MovieViewComposer {
 	{
 		$view->with('movie', $this->movies->getById($this->router->input('movie')));
 		$view->with('formats', $this->formats->allOwnable()->lists('name', 'id')->all());
+		$view->with('editions', $this->movies->editionsOwned($this->router->input('movie')));
 
 		$purchase = $this->purchases->getOpen();
 

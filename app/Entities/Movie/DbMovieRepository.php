@@ -64,6 +64,19 @@ class DbMovieRepository implements MovieInterface {
 		$this->purchases->deleteEmptyPurchases();
 	}
 
+	public function editionsOwned($id)
+	{
+		$items = \App\Entities\Purchase\EloquentPurchaseable::where(['purchaseable_type' => 'App\Entities\Movie\EloquentMovie', 'purchaseable_id' => $id])->with('format')->get();
+		$result = [];
+
+		foreach ($items as $item)
+		{
+			$result[] = (object) ['edition' => (strlen($item->edition) > 1 ? $item->edition : 'Standard'), 'format' => $item->format];
+		}
+
+		return collect($result);
+	}
+
 	private function generateSlug($title)
 	{
 		$slug = Str::slug(trim($title));
