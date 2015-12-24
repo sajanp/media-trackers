@@ -39,8 +39,10 @@
           <li class="{{URLActive('theater*')}}">{!!HTML::linkRoute('theater.index', 'Theaters')!!}</li>
           <li class="{{URLActive('subscription*')}}">{!!HTML::linkRoute('subscription.index', 'Subscriptions')!!}</li>
           <li class="{{URLActive('purchase*')}}">{!!HTML::linkRoute('purchase.index', 'Purchases')!!}</li>
+          <li class="{{URLActive('rental*')}}">{!!HTML::linkRoute('rental.index', 'Rentals')!!}</li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <li class="{{navActive('rental.create')">{!!HTML::linkRoute('rental.create', 'New Rental')!!}</li>
           <li class="{{navActive('purchase.create')">{!!HTML::linkRoute('purchase.create', 'New Purchase')!!}</li>
         </ul>
       </div>

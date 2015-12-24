@@ -8,4 +8,9 @@ class DbFormatRepository implements FormatInterface {
 	{
 		return Format::ownable()->get();
 	}
+
+	public function allRentable()
+	{
+		return Format::rentable()->get();
+	}
 }

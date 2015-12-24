@@ -35,6 +35,9 @@ class AppServiceProvider extends ServiceProvider {
 		View::composer('purchase.index', 'App\Http\ViewComposers\PurchaseViewComposer@index');
 
 		View::composer('purchase.purchaseable.edit', 'App\Http\ViewComposers\PurchaseableViewComposer@edit');
+
+		View::composer('rental.index', 'App\Http\ViewComposers\RentalViewComposer@index');
+		View::composer('rental.partials.model-form', 'App\Http\ViewComposers\RentalViewComposer@modelForm');
 	}
 
 	/**
@@ -51,6 +54,7 @@ class AppServiceProvider extends ServiceProvider {
 		$this->app->bind('App\Entities\Purchase\PurchaseInterface', 'App\Entities\Purchase\DbPurchaseRepository');
 		$this->app->bind('App\Entities\Format\FormatInterface', 'App\Entities\Format\DbFormatRepository');
 		$this->app->bind('App\Entities\Ultraviolet\UltravioletInterface', 'App\Entities\Ultraviolet\DbUltravioletRepository');
+		$this->app->bind('App\Entities\Rental\RentalInterface', 'App\Entities\Rental\DbRentalRepository');
 	}
 
 }

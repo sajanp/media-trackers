@@ -43,6 +43,7 @@ class RouteServiceProvider extends ServiceProvider {
 			require app_path('Http/Routes/SubscriptionRoutes.php');
 			require app_path('Http/Routes/MovieRoutes.php');
 			require app_path('Http/Routes/PurchaseRoutes.php');
+			require app_path('Http/Routes/RentalRoutes.php');
 		});
 	}
 

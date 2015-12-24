@@ -35,6 +35,11 @@ class DbRetailerRepository implements RetailerInterface {
 		return Retailer::ownable()->get(['name', 'id']);
 	}
 
+	public function allRentable(array $with = array())
+	{
+		return Retailer::rentable()->get(['name', 'id']);
+	}
+
 	public function updateById($id, array $properties)
 	{
 		$retailer = $this->getById($id);

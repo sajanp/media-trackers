@@ -11,4 +11,9 @@ class EloquentRetailer extends Model {
 	{
 		return $query->where('isOwnable', true);
 	}
+
+	public function scopeRentable($query)
+	{
+		return $query->where('isRentable', true);
+	}
 }
